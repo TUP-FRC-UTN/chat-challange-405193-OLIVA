@@ -13,6 +13,8 @@ export class AppComponent {
   chatHistory:string[] = [];
 
   reciveMsj(msj:string){
+    console.log(msj);
     this.chatHistory.push(msj);
+    console.log(this.chatHistory);
   }
 }
