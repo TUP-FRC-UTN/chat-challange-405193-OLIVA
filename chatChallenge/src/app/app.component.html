@@ -1,0 +1,13 @@
+<div class="row">
+  <label for="chat">Sala de chat</label>
+  <textarea name="chat" id="chat"></textarea>
+</div>
+<div class="row">
+  <div class="col-6">
+    <app-usser-chat (msjEmmiter)="reciveMsj($event)"></app-usser-chat>
+  </div>
+  
+  <div class="col-6">
+    <app-usser-chat (msjEmmiter)="reciveMsj($event)"></app-usser-chat>
+  </div>
+</div>
