@@ -1,9 +1,11 @@
-<div class="container">
+<div class="container" style="border: solid 2px black;">
     <div class="row mt-5">
         <div class="col">
-            <label for="mensaje">Usuario: </label>
-            <input type="text" name="mensaje" id="mensaje" [(ngModel)]="msj">
-            <button (click)="sendMsj()" class="btn btn-primary">Enviar</button>
+            <div class="form-group">
+                <label for="mensaje">Usuario: {{user}}</label>
+                <input class="form-control" type="text" name="mensaje" id="mensaje" [(ngModel)]="msj">
+                <button (click)="sendMsj()" class="btn btn-primary mt-1">Enviar</button>
+            </div>
         </div>
     </div>
 </div>

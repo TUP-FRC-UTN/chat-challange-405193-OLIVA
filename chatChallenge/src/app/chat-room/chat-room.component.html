@@ -1,0 +1,33 @@
+<div class="container" style="border: solid 2px green;">
+    <div class="row">
+        <h2 class="text-center">Chat Room</h2>
+    </div>
+    <div class="row">
+        <div class="col-6">
+            <app-usser-chat
+                [user]="user1"
+                (msjEmmiter)="reciveMsj($event)"></app-usser-chat>
+        </div>
+
+        <div class="col-6">
+            <app-usser-chat
+                [user]="user2"
+                (msjEmmiter)="reciveMsj($event)"></app-usser-chat>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        @for (msj of chatHistory; track msj.user) {
+            @if (msj.user == 'Max') {
+                <p class="text-start">
+                    <strong>{{msj.user}}: </strong> {{msj.msj}}
+                </p>
+            }
+            @else {
+                <p class="text-end">
+                    <strong>{{msj.user}}: </strong> {{msj.msj}}
+                </p>
+            }
+        }
+    </div>
+</div>

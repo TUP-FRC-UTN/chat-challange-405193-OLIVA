@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -10,11 +10,18 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './usser-chat.component.css'
 })
 export class UsserChatComponent {
-  @Output() msjEmmiter = new EventEmitter<string>();
-  msj:string = "";
+  @Input() user!:string
+  @Output() msjEmmiter = new EventEmitter<{
+    user:string,
+    msj:string
+  }>();
+  
+  msj:string = ''
 
   sendMsj(){
-    this.msjEmmiter.emit(this.msj);
-    this.msj = "";
+    if(this.msj.trim()){
+      this.msjEmmiter.emit({ user: this.user, msj: this.msj})
+      this.msj = ''
+    }
   }
 }

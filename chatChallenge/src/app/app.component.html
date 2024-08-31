@@ -1,13 +1,3 @@
-<div class="row">
-  <label for="chat">Sala de chat</label>
-  <textarea name="chat" id="chat" [value]="chatHistory"></textarea>
-</div>
-<div class="row">
-  <div class="col-6">
-    <app-usser-chat (msjEmmiter)="reciveMsj($event)"></app-usser-chat>
-  </div>
-  
-  <div class="col-6">
-    <app-usser-chat (msjEmmiter)="reciveMsj($event)"></app-usser-chat>
-  </div>
+<div class="container" style="border: solid 2px red;">
+  <app-chat-room></app-chat-room>
 </div>
